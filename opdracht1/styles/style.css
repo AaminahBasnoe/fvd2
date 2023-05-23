@@ -1,0 +1,484 @@
+/* CSS Document */
+
+/*********/
+/* FONTS */
+/*********/
+@font-face {
+	font-family: 'Dunkin';
+	src:url("../fonts/Dunkin.otf") format("opentype");	
+}
+
+
+
+
+
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+
+button:not(:disabled), summary {
+	cursor: pointer;
+}
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	/* startje */
+	--color-background:#ff6e0c;
+	--color-h1background: #ffffff;
+	--color-dunkinpink: #f20c90;
+	--color-dunkinlightpink: #FFC0CB;
+	--color-dunkinorange: #ff6e0c;
+	--color-lightorange: #FFE4BE;
+	--color-dunkinbrown: #653819;
+	--color-dunkinlightbrown: #DDBD8E;
+	--color-dunkinblue: #71c5e8;
+	--color-lightblue: #ADD8E6;
+	--color-dunkinyellow: #ffe60d;
+	--color-lilac: #D8B9FF;
+	--color-white: #ffffff;
+}
+
+@media (prefers-color-scheme: dark){
+	:root{
+		--color-background: #0f0f0f;
+		--color-h1background: #242526;
+		--color-dunkinpink: #f20c90;
+		--color-dunkinlightpink: #FFC0CB;
+		--color-dunkinorange: #ff6e0c;
+		--color-lightorange: #FFE4BE;
+		--color-dunkinbrown: #653819;
+		--color-dunkinlightbrown: #DDBD8E;
+		--color-dunkinblue: #71c5e8;
+		--color-lightblue: #ADD8E6;
+		--color-dunkinyellow: #ffe60d;
+		--color-lilac: #D8B9FF;
+		--color-white: #ffffff;
+	}
+}
+
+
+
+
+
+/****************/
+/* JOUW STYLING */
+/****************/
+body {
+  font-family: Dunkin, sans-serif;
+  text-transform: uppercase;
+  color:var(--color-text);
+  background-color:var(--color-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* jouw code */
+
+h1{
+	color: var(--color-text);
+	font-size: 5em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--color-h1background);
+	width: 90%;
+	max-width: 7em;
+	aspect-ratio: 16/8; 
+	border-radius: .6em;
+	overflow: hidden;
+	position: relative;
+	box-shadow: inset 0 0 0 1px var(--color-background);
+}
+
+@media (max-width: 530px){
+	h1{
+		font-size: 3em;
+	}
+}
+
+
+h1 span{
+	background-clip: text;
+	-webkit-background-clip: text;
+}
+
+h1:hover span{
+	animation-duration:4.5s;
+	animation-direction:alternate;
+}
+
+h1:hover span:nth-of-type(1){
+	animation-name: animation-d;
+}
+
+h1:hover span:nth-of-type(2){
+	animation-name: animation-u;
+}
+
+h1:hover span:nth-of-type(3){
+	animation-name: animation-n1;
+}
+
+h1:hover span:nth-of-type(4){
+	animation-name: animation-k;
+}
+
+h1:hover span:nth-of-type(5){
+	animation-name: animation-i;
+}
+
+h1:hover span:nth-of-type(6){
+	animation-name: animation-n2;
+}
+
+
+
+span:nth-of-type(1){
+	animation-delay: 1s;
+	color: var(--color-dunkinorange);
+}
+
+span:nth-of-type(2){
+	animation-delay: .8s;
+	color: var(--color-dunkinlightbrown);
+}
+
+span:nth-of-type(3){
+	animation-delay: .6s;
+	color: var(--color-dunkinpink);
+}
+
+span:nth-of-type(4){
+	animation-delay: .4s;
+	color: var(--color-dunkinorange);
+}
+
+span:nth-of-type(5){
+	animation-delay: .2s;
+	color: var(--color-dunkinyellow);
+}
+
+span:nth-of-type(6){
+	animation-delay: 0s;
+	color: var(--color-dunkinblue);
+}
+
+
+ 
+  @keyframes animation-d { 
+	
+	0%{
+		transform: translateY(0);
+		animation-timing-function: ease-in-out;
+	  }
+	  
+
+	18.75%, 20.5%{
+		transform: translateY(2.8em);
+		animation-timing-function: ease-in-out;
+	  }
+
+	
+	37.5%, 100% {
+	  transform:translatey(0);
+	  animation-timing-function: ease-in-out;
+	  background-image: radial-gradient(
+		var(--color-dunkinlightpink) 30% 50%,
+		var(--color-lightorange) 50% 70%, 
+		transparent 70% 100%
+	  );
+
+	  background-size: .7em .9em;
+	  background-color: var(--color-dunkinorange);
+	  
+
+	  color:transparent;
+
+	  background-position: 70% 50%;
+	}
+  }
+
+  @keyframes animation-u { 
+	
+	0%{
+		transform: translateY(0);
+		animation-timing-function: ease-in-out;
+	  }
+	  
+	  
+
+	  18.75%, 20.5%{
+		transform: translateY(2.8em);
+		animation-timing-function: ease-in-out;
+	  }
+
+	
+	  37.5%, 100% {
+		transform:translatey(0);
+		animation-timing-function: ease-in-out;
+
+		background-image: radial-gradient(
+			var(--color-dunkinbrown) 20%, 
+			transparent 20% 80%, 
+			var(--color-dunkinbrown) 80%
+			);
+        background-size: .4em .4em;
+        background-color: var(--color-dunkinlightbrown);
+		/* https://superdesigner.co/tools/css-backgrounds */
+
+		color:transparent;
+	}
+  }
+
+  
+
+  @keyframes animation-n1 { 
+	
+	0%{
+		transform: translateY(0);
+		animation-timing-function: ease-in-out;
+	  }
+	  
+	  
+
+	  18.75%, 20.5%{
+		transform: translateY(2.8em);
+		animation-timing-function: ease-in-out;
+	  }
+
+	
+	  37.5%, 100% {
+	  transform:translatey(0);
+	  animation-timing-function: ease-in-out;
+	  
+	  background-image: linear-gradient(
+			0.3turn, 
+			transparent 0% 20%, 
+			var(--color-dunkinlightpink) 20% 25%, 
+			transparent 25% 35%, 
+			var(--color-white) 35% 40%, 
+			transparent 40% 50%,
+			var(--color-dunkinlightpink) 50% 55%,
+			transparent 55% 65%,
+			var(--color-white) 65% 70%,
+			transparent 70% 80%,
+			var(--color-dunkinlightpink) 80% 85%,
+			transparent 85% 95%,
+			var(--color-white) 95% 100%
+			);
+        
+		background-color: var(--color-dunkinpink);
+
+		color:transparent;
+	}
+  }
+
+
+  @keyframes animation-k { 
+	
+	0%{
+		transform: translateY(0);
+		animation-timing-function: ease-in-out;
+	  }
+	  
+	  
+
+	  18.75%, 20.5%{
+		transform: translateY(2.8em);
+		animation-timing-function: ease-in-out;
+	  }
+
+	
+	  37.5%, 100% {
+	  transform:translatey(0);
+	  animation-timing-function: ease-in-out;
+
+	  background-image: 
+	  linear-gradient(
+		135deg,
+		transparent 55%,
+		var(--color-dunkinorange) 55%
+	  ),
+	  
+	  radial-gradient(
+			circle at center,
+			transparent 15%,
+			var(--color-white) 15% 25%,
+			transparent 25% 35%,
+			var(--color-dunkinlightpink) 35% 45%,
+			transparent 45% 55%,
+			var(--color-white) 55% 65%,
+			transparent 65%
+			);
+        background-size: .25em .25em;
+        background-color: var(--color-dunkinorange);
+		/* https://www.youtube.com/watch?v=q7SbKbmTCzg&ab_channel=CodingArtist */
+
+		color:transparent;
+	}
+  }
+
+  
+
+  @keyframes animation-i { 
+	
+	0%{
+		transform: translateY(0);
+		animation-timing-function: ease-in-out;
+	}
+	  
+	  
+
+	18.75%, 20.5%{
+		transform: translateY(2.8em);
+		animation-timing-function: ease-in-out;
+	}
+
+	
+	37.5%, 100% {
+		transform:translatey(0);
+		animation-timing-function: ease-in-out;
+
+		background-image: 
+			radial-gradient(
+				farthest-side at bottom left,
+				var(--color-lilac) 50%, 
+				transparent 50% 
+			),
+			radial-gradient(
+				farthest-side at top right,
+				var(--color-lilac) 70%, 
+				transparent 70% 
+			);
+        background-size: cover;
+        background-color: var(--color-dunkinyellow);
+
+		color:transparent;
+	}
+  }
+
+
+
+
+  @keyframes animation-n2 { 
+	
+	0%{
+		transform: translateY(0);
+		animation-timing-function: ease-in-out;
+	}
+	  
+	  
+
+	18.75%, 20.5%{
+		transform: translateY(2.8em);
+		animation-timing-function: ease-in-out;
+	}
+
+	
+	37.5%, 100% {
+		transform:translatey(0);
+		animation-timing-function: ease-in-out;
+
+		background-image: conic-gradient(
+			var(--color-lightblue) 0deg 60deg,
+			transparent 60deg 120deg,
+			var(--color-lightblue) 120deg 180deg,
+			transparent 180deg 240deg,
+			var(--color-lightblue) 240deg 300deg,
+			transparent 300deg 360deg
+		);
+
+    	background-size: .5em .5em;
+    	background-color: var(--color-dunkinblue);
+
+		color:transparent;
+	}
+  }
+
+
+
+  h1:hover::after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 250%;
+
+	background-image: 
+		radial-gradient(
+			farthest-side,
+			var(--color-background) 100%,
+			transparent 0
+		),
+   		radial-gradient(
+			farthest-side at center top,
+			transparent 85.5%,
+			var(--color-background) 0
+		),
+    	radial-gradient(
+			farthest-side,
+			var(--color-background) 100%,
+			transparent 0
+		),
+    	radial-gradient(
+			farthest-side at center top,
+			transparent 85%,
+			var(--color-background) 0
+		),
+    	linear-gradient( 
+			var(--color-background),
+			var(--color-background) 
+		),
+    	linear-gradient( 
+			var(--color-background),
+			var(--color-background) 
+		),
+		linear-gradient(
+			transparent 60%,
+			var(--color-background) 60%
+		);
+    
+	background-size:
+		32% 20%,
+    	35% 10%,
+    	32% 20%,
+    	35% 10%,
+    	32% 10%,
+    	100% 3%,
+		cover;
+	background-repeat: no-repeat;
+	background-position: 
+		left 52%,
+    	44.8% 54.3%,
+    	90% 52%,
+    	138.2% 54.3%,
+    	left 55.5%,
+    	left 59%,
+		center;
+
+	animation-name: golf;
+	animation-duration: 3s;
+	animation-delay: 4s;
+  }
+
+  @keyframes golf{
+	33%, 67%{
+		transform: translateY(-60%);
+	}
+
+	100%{
+		transform: translateY(0);
+	}
+  }
