@@ -9,13 +9,51 @@
 	<title>Opdracht 2: Interactie galore - Frontend voor Designers</title>
 	
 	<link href="styles/style.css" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon"  href="images/pokebal.png">
 </head>
 
 <body>
-	<h1>Opdracht 2</h1>
+	<section>
+		<h1>Guess the pokemon</h1>
+		<img class="pokemonimg" src="" alt="">
+		<h2></h2>
+		<input type="text" placeholder="Type your answer..">
+		<button disabled class="button1">Guess</button>
+		<button class="likebutton">♥</button>
+		<button class="button2">Next pokemon</button>
+		<button class="listbutton">
+			<img src="./images/black_heart.png" alt="">
+		</button>
+		<p>Score: <span></span></p>
+	</section>
 
+	<!-- uit- en inklapbare lijst -->
+	<section>
+		<header>
+			<button class="closebutton">⊲</button>
+			<h2>Mijn lijst</h2>
+		</header>
+		<main id="theList">
+			<aside>
+				<!-- https://codepen.io/shooft/pen/BaOwRzv?editors=1010 -->
+				<input type="search" class="search" placeholder="Typ hier om te zoeken">
+			</aside>
+			<ul class="list"></ul>
+		</main>
+		<footer>
+			<img src="./images/trashcan.png" class="trashcan" alt="">
+		</footer>
+	</section>
+	
+	<!-- Library van de zoekfunctie -->
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+
+	<!-- library van de drag en drop funtie -->
+	<script defer src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+	<!-- mijn javascript -->
 	<script defer src="scripts/script.js"></script>
+
 </body>
 	
 </html>

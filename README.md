@@ -14,11 +14,27 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
 ## Bronnenlijst
+  ### voor opdracht 1:
   1. https://developer.mozilla.org/en-US/ 
   2. https://www.dafont.com/dunkin.font 
   3. https://superdesigner.co/tools/css-backgrounds
   4. https://www.youtube.com/watch?v=q7SbKbmTCzg&ab_channel=CodingArtist
   5. Sanne (docent)
+  
+  ### voor opdracht 2:
+  1. https://developer.mozilla.org/en-US/
+  2. https://sortablejs.github.io/Sortable/
+  3. https://codepen.io/shooft/pen/YzOrQxo
+  4. https://codepen.io/shooft/pen/BaOwRzv
+  5. https://codepen.io/shooft/pen/PoRyxbR
+  6. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+  7. https://codepen.io/shooft/pen/MWPMmyq
+  8. https://codepen.io/shooft/pen/xxzjJeW
+  9. https://listjs.com/docs/
+  10. https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js
+  11. https://codepen.io/shooft/pen/WNKWjmx?editors=0100
+  12. ChatGBT
+  13. Sanne (docent)
 
 
 
@@ -79,15 +95,18 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Je ontwerp:
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="ontwerp opdracht 2">
+  <img src="readme-images/ontwerp-kleinscherm.jpg" width="375px" alt="ontwerp opdracht 2">
+  <img src="readme-images/ontwerp-grootscherm.jpg" width="375px" alt="ontwerp opdracht 2">
 
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Javascript skills verbeteren
+  - API
+  - Dingen toevoegen aan een lijstje
+  - Met een randomizer een spelletje maken
+  - zoekfunctie laten werken
+  - Leren hoe libraries werken en toepassen
 </details>
 
 
@@ -102,23 +121,43 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Bevinding 1:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  Randomizer laten werken ook nadat je al een pokemon hebt geraden, niet alleen in het begin.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  De math random en math floor code die ervoor zorgen dat je een rondom getal krijgt heb ik in een functie gezet, waardoor er niet maar 1 keer een random getal wordt gegenereerd als je die code niet in een functie zet. 
 
 
 
   ### Bevinding 2:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  Guess button disablen als de input leeg is.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  Ik heb een functie aangemaakt die checkt of de inputvalue leeg is of niet. Eerst had ik het niet in een functie gezet, waardoor het maar 1 keer werd gechecked.
 
 
 
   ### Bevinding 3:
-  ...
+  Ervoor zorgen dat elke pokemon maar 1 keer voorkomt
+
+  #### oplossing:
+  als de pokemon is geraden wordt deze uit de array gegooid door middel van splice. Hierdoor komt de pokemon niet meer terug als hij al geraden is.
+
+
+
+  ### Bevinding 4:
+  Meerdere data in een array stoppen, waardoor je niet elke pokemon apart moet koppelen aan het plaatje.
+
+  #### oplossing:
+  ik heb een var aangemaakt met {} deze haken waar je meerdere data in kan stoppen dat bij elkaar hoort. Hiermee hoef je niet per pokemon de naam aan het plaatje te linken zoals ik dat eerst deed. 
+
+
+
+  ### Bevinding 5:
+  Met javascript de html van de list item toevoegen als je op de like button klikt.
+
+  #### oplossing:
+  Ik heb een nieuwe var aangemaakt waarin de html elementen van de lijst zitten. De if else functie checkt als je op de like button klikt of de pokemon al in de lijst zit, zo niet dan wordt de html toegevoegd, en anders wordt de list item eruit gehaald. 
+
 </details>
 
 
@@ -129,17 +168,21 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken bij afronden opdracht (voor week 8)</summary>
 
   ### Je uitkomst - karakteristiek screenshot(s):
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="uitkomst opdracht 2">
+  <img src="readme-images/uitkomst1.jpg" width="375px" alt="uitkomst opdracht 2">
+  <img src="readme-images/uitkomst2.jpg" width="375px" alt="uitkomst opdracht 2">
+  <img src="readme-images/uitkomst3.jpg" width="375px" alt="uitkomst opdracht 2">
+  <img src="readme-images/uitkomst4.jpg" width="375px" alt="uitkomst opdracht 2">
 
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatje(s)
+  Het spelletje werkt. Daar ben ik blij mee. Je krijgt in het begin een random pokemon in het zwart en je moet raden welke het is. Raad je het verkeerd dan komt er "wrong" te staan en raad je het goed dan krijg je een punt en kan je de geraden pokemon toevoegen aan je lijst. Je kan hem ook weer verwijderen als je nog een keer op het hartje klikt. Je kan vervolgens op 'next pokemon' klikken en dan krijg je de volgende random pokemon te zien, terwijl de vorige eruit wordt gehaald (omdat je die dan al hebt geraden). Ik ben ook blij met de uitklapbare lijst (ik had hiervoor nog nooit een hamburgermenu gemaakt in css) en dat deze naast het spelletje komt te staan vanaf een bepaalde grootte. Verder heb ik geleerd hoe een API werkt en hoe je libraries kunt gebruiken (ookal was dit niet helemaal gelukt, zie volgende alinea).
 
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="top">
+  <img src="readme-images/spelletje.jpg" width="375px" alt="top">
 
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatje(s)
+  Ik heb heel veel gestruggled met de zoekfunctie en die is uiteindelijk ook niet gelukt. Ik heb zelfs chatGBT gevraagd om mij te helpen, maar daar werd ik ook niet wijzer van. Ik denk dat het lag aan dat ik niet wilde zoeken in een al bestaande HTML lijst, maar in een die gemaakt was met javascript. Ik heb veel dingen geprobeerd, ook zonder de library, maar het werkte niet. Ik probeerde ook met de library een array aan te maken en daar in te zoeken, en dat deed de zoekfunctie het wel, alleen staat de lijst er dan altijd, i.p.v. alleen wanneer je ze hebt toegevoegd met de like button. Het lukte niet om deze 2 functies te combineren. Ook wilde ik dat je de kaartjes naar de vuilisbak kon slepen en dat de kaart dan verdwijnt, maar dat was ook niet gelukt. Ik probeerde het met de sortable library, maar het lukte niet om de kaart te laten verdwijnen. Het was wel gelukt om de kaarten in de lijst zelf te verplaatsen. 
 
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="bummer">
+  <img src="readme-images/zoekfunctie.jpg" width="375px" alt="bummer">
+  <img src="readme-images/deletefunctie.jpg" width="375px" alt="bummer">
 </details>

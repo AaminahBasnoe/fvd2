@@ -4,13 +4,12 @@
 /* FONTS */
 /*********/
 @font-face {
-	font-family: 'eenfont';
-	src: url('../fonts/eenfont.woff2') format('woff2'),
-			 url('../fonts/eenfont.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
+		font-family: 'bauhaus-93-regular';
+		src:url("../fonts/BAUHS93.TTF") format("truetype");	
+		font-weight: normal;
+		font-style: normal;
+	}
 
-}
 
 
 
@@ -35,11 +34,42 @@ button:not(:disabled), summary {
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
-	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
-}
+	/* tekst */
+	--color-text:#000;
+	--color-text2: #fff;
 
+	/* achtergrond */
+	--color-background: #A4C683;
+	--color-background-favo: #CBA141;
+	--color-background-cards: #E4C57F;
+
+	/* buttons */
+	--color-background-buttons: #fff;
+	--color-box-shadow: #939393;
+	--color-box-shadow-active: rgb(30, 30, 30);
+	--color-background-buttons-hover: rgb(61, 61, 61);
+	--color-background-button-disabled: #a8a8a8;
+	--color-text-button-disabled: #6d6d6d;
+	--color-togglelike-hover-and-liked: #FF0000;
+
+	/* gradient */
+	--gradient-goedgeraden: linear-gradient(
+		45deg,
+		var(--color-background-favo),
+		transparent,
+		var(--color-background-favo),
+		transparent,
+		var(--color-background-favo),
+		transparent,
+		var(--color-background-favo),
+		transparent,
+		var(--color-background-favo),
+		transparent,
+		var(--color-background-favo),
+		transparent,
+		var(--color-background-favo)
+	  );
+}
 
 
 
@@ -47,11 +77,320 @@ button:not(:disabled), summary {
 /****************/
 /* JOUW STYLING */
 /****************/
-body {
-  font-family:eenfont, sans-serif;
-  color:var(--color-text);
-  background-color:var(--color-background);
+body{
+	margin: 0;
+	padding: 0;
+	color: var(--color-text);
 }
 
-/* jouw code */
+h2{
+	font-size: 1em;
+	font-weight: 100;
+}
 
+h3{
+	font-weight: 100;
+}
+
+/* https://codepen.io/shooft/pen/WNKWjmx?editors=0100 */
+@keyframes correct-text-animation {
+	0% {
+	  background-position:left bottom;
+	}
+	100% {
+	  background-position:right top;
+	}
+  }
+
+section:first-of-type h2.goedgeraden{
+	font-size: 1.5em;
+	background-image: var(--gradient-goedgeraden);
+  	background-size: 200% 200%;
+  	background-clip: text;
+	-webkit-background-clip: text;
+	background-color: var(--color-text2);
+	color:transparent;
+	animation: correct-text-animation .8s linear infinite;
+}
+
+
+
+body section:first-of-type{
+	 font-family: 'bauhaus-93-regular', sans-serif;
+	 background-color: var(--color-background);
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: center;
+	 align-items: center;
+	 gap: .5em;
+	 height: 100vh;
+}
+
+
+body img:first-of-type{
+	width: 80%;
+	max-width: 20em;
+	margin: .8em 0;
+}
+
+.nietgeraden{
+	filter: grayscale(100%) brightness(0);
+}
+
+
+/* heart button om de lijst te openen */
+body section:first-of-type button:last-of-type{
+	width: 15%;
+	max-width: 4.5em;
+	position: fixed;
+	top: 1em;
+	right: 1em;
+	background-color: transparent;
+	border: none;
+}
+
+section:first-of-type button:last-of-type:hover{
+	transform: scale(1.2);
+	transition: .5s;
+}
+
+input{
+	height: 2em;
+}
+
+/* guess en next button */
+body button:not(:last-of-type){
+	background-color: var(--color-background-buttons);
+	padding: .5em 1.8em;
+	border: none;
+	border-radius: 30px;
+	font-family: 'bauhaus-93-regular', sans-serif;
+	box-shadow:0 .2em 0 var(--color-box-shadow);
+	transition:.2s;
+}
+
+body button:not(:last-of-type, :disabled):hover{
+	background-color: var(--color-background-buttons-hover);
+	color: var(--color-text2);
+}
+
+body button:not(:last-of-type, :disabled):active{
+	box-shadow:0 0 0 var(--color-box-shadow-active);
+	transform:translateY(.2em);
+}
+
+body button:disabled{
+	background-color: var(--color-background-button-disabled);
+	color: var(--color-text-button-disabled);
+}
+
+
+/* styling van de toggle like button */
+section:nth-of-type(1) button:nth-of-type(2){
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+	padding: 0;
+	font-size: 2em;
+	/* color: #6d6d6d; */
+}
+
+section:nth-of-type(1) button:nth-of-type(2):hover{
+	color: var(--color-togglelike-hover-and-liked);
+	transform: scale(1.2);
+	transition: .5s;
+}
+
+.redheart{
+	color: var(--color-togglelike-hover-and-liked);
+}
+
+
+/* styling van de lijst */
+section:nth-of-type(2){
+	background-color: var(--color-background-favo);
+	position: fixed;
+	inset:0 0 0 50%;
+	transform:translateX(100%);
+	transition:.1s;
+	width: 100%;
+	font-family: 'bauhaus-93-regular', sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1em;
+	overflow: auto;
+	height: 100%;
+}
+
+section:nth-of-type(2).open{
+	transform:translateX(-50%);
+	transition:.3s;
+}
+
+section:nth-of-type(2) header{
+	background-color: var(--color-background-favo);
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+/* styling van de header van de lijst */
+section header button{
+	position: absolute;
+	left: 1em;
+	font-size: 2em;
+	background-color: transparent;
+	border: none;
+	color: inherit;
+}
+
+section header button:hover{
+	background-color: var(--color-background-cards);
+	color: var(--color-text2);
+	padding: .1em .2em;
+	border-radius: 50px;
+	transition: .5s;
+}
+
+/* styling van de main van de lijst */
+section main{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+aside{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/* styling van het lijstje */
+section:nth-of-type(2) ul{
+	list-style-type: none;
+	display: grid;
+	gap: 1em;
+	justify-content: center;
+	align-items: center;
+	grid-template-columns: repeat(auto-fit, 12em);
+	padding: 0;
+	width: 90%;
+}
+
+section:nth-of-type(2) ul:empty{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+section:nth-of-type(2) ul:empty::after {
+	content:"Je hebt nog geen favorieten toegevoegd";
+	text-align: center;
+	justify-self: center;
+	align-self: center;
+}
+
+/* styling van de list items (de kaartjes) */
+section:nth-of-type(2) li{
+	background-color: var(--color-background-cards);
+	border-radius: 25%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	aspect-ratio: 1/1;
+	cursor:grab;
+}
+
+section:nth-of-type(2) li img{
+	width: 30%;
+}
+
+
+/* styling van de footer van de lijst*/
+section:nth-of-type(2) footer{
+	display: flex;
+	place-content: center;
+	position: sticky;
+	bottom: 0;
+	margin-top: auto;
+	z-index: 100;
+	background-color: var(--color-background-favo);
+	width: 100%;
+}
+
+
+section:nth-of-type(2) footer img{
+	max-width: 2em;
+	/* filter: brightness(0) invert(1); */
+}
+
+
+/* @media zodat de tweede section vanaf 900px zichtbaar is naast de eerste section*/
+@media (min-width: 900px){
+	body section:first-of-type{
+		width: 50%;
+	}
+
+	body section:nth-of-type(2){
+		background-color: var(--color-background-favo);
+		position: absolute;
+		inset:0 0 0 50%;
+		transform:translateX(0%);
+		transition:.1s;
+		width: 50%;
+		font-family: 'bauhaus-93-regular', sans-serif;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1em;
+	}
+
+	section:nth-of-type(2) button{
+		display: none;
+	}
+
+	section:nth-of-type(2).open{
+		transform:translateX(0%);
+		transition:.3s;
+	}
+}
+/* @media voor dark theme*/
+
+@media (prefers-color-scheme: dark){
+	:root{
+		--color-text: #fff;
+		--color-text2: #fff;
+	
+		/* achtergrond */
+		--color-background: #323130;
+		--color-background-favo: #0F0F0F;
+		--color-background-cards: #535353;
+	
+		/* buttons */
+		--color-background-buttons: #fff;
+		--color-box-shadow: #939393;
+		--color-box-shadow-active: rgb(30, 30, 30);
+		--color-background-buttons-hover: rgb(61, 61, 61);
+		--color-background-button-disabled: #a8a8a8;
+		--color-text-button-disabled: #6d6d6d;
+		--color-togglelike-hover-and-liked: #FF0000;
+	}
+
+	section:nth-of-type(2) footer img{
+		filter: brightness(0) invert(1);
+	}
+
+	body section:first-of-type button:last-of-type{
+		filter: brightness(0) invert(1);
+	}
+}
